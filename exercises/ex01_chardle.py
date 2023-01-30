@@ -30,7 +30,7 @@ if (character == word[0]):
                     print(character + " found at index 1")
                     print(character + " found at index 2")
                     print(character + " found at index 3")
-            elif(character == word[4]):
+            elif (character == word[4]):
                 instances = instances + 1
                 print(character + " found at index 0")
                 print(character + " found at index 1")
@@ -109,7 +109,7 @@ elif (character == word[1]):
                 print(character + " found at index 1")
                 print(character + " found at index 2")
                 print(character + " found at index 3")
-        elif(character == word[4]):
+        elif (character == word[4]):
             instances = instances + 1
             print(character + " found at index 1")
             print(character + " found at index 2")
@@ -145,7 +145,7 @@ elif (character == word[2]):
         else: 
             print(character + " found at index 2")
             print(character + " found at index 3")
-    elif(character == word[4]):
+    elif (character == word[4]):
         instances = instances + 1
         print(character + " found at index 2")
         print(character + " found at index 4")
