@@ -10,6 +10,7 @@ index: int = 0
 accuracy: str = ""
 while playing:
     if guess == SECRET:
+        #Checks if guess matches secret
         while index < len(SECRET):
             if guess[index] == SECRET[index]:
                 accuracy = accuracy + GREEN_BOX
@@ -18,8 +19,10 @@ while playing:
         print("Woo! You got it!")
         playing = False
     elif len(guess) != len(SECRET):
-            guess = input(f"That was not {len(SECRET)} letters! Try again: ")
+        #Checks if guess length matches secret length
+        guess = input(f"That was not {len(SECRET)} letters! Try again: ")
     else:
+        #Checks what indexs in guess match indexs in secret
         while index < len(SECRET):
             if guess[index] == SECRET[index]:
                 accuracy = accuracy + GREEN_BOX
