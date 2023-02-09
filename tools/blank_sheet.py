@@ -8,26 +8,3 @@ index: int = 0
 accuracy: str = ""
 misplaced: bool = False
 secret_index: int = 0
-while index < len(SECRET):
-    if guess[index] == SECRET[index]:
-        accuracy = accuracy + GREEN_BOX
-        print(index)
-        print(accuracy)
-        print(misplaced)
-        index = index + 1
-    else:
-        misplaced = False
-        secret_index = 0
-        while misplaced == False and secret_index < len(SECRET):
-            if guess[index] == SECRET[secret_index]:
-                misplaced = True
-                accuracy = accuracy + YELLOW_BOX
-                print(index)
-                print(accuracy)
-                print(misplaced)
-            else: secret_index = secret_index + 1
-        if misplaced == False:
-            accuracy = accuracy + WHITE_BOX
-            misplaced = False
-        index = index + 1
-print(accuracy)

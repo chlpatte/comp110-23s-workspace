@@ -20,21 +20,22 @@ while playing:
     elif len(guess) != len(SECRET):
             guess = input(f"That was not {len(SECRET)} letters! Try again: ")
     else:
-        misplaced: bool = False
-        secret_index: int = 0
         while index < len(SECRET):
             if guess[index] == SECRET[index]:
                 accuracy = accuracy + GREEN_BOX
                 index = index + 1
-            while misplaced and secret_index < len(SECRET):
-                if guess[index] == SECRET[secret_index]:
+            else:
+                misplaced = False
+                secret_index = 0
+                while misplaced == False and secret_index < len(SECRET):
+                    if guess[index] == SECRET[secret_index]:
+                        misplaced = True
+                        accuracy = accuracy + YELLOW_BOX
+                    else: secret_index = secret_index + 1
+                if misplaced == False:
+                    accuracy = accuracy + WHITE_BOX
                     misplaced = False
-                    accuracy = accuracy + YELLOW_BOX
-                else:
-                    secret_index = secret_index + 1
-            if misplaced == True:
-                accuracy = accuracy + WHITE_BOX
-            index = index + 1
+                index = index + 1
         print(accuracy)
         print("Not quite. Play again soon!")
         playing = False
