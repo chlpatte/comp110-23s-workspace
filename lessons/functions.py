@@ -1,7 +1,7 @@
 """Demonstrates FUnctions"""
 from random import randint
 
-y: str = print("Hello")
+y: str = "Hello"
 print(y)
 
 x: int = round(10.25)

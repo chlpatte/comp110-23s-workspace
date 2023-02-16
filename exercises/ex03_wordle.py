@@ -2,8 +2,8 @@
 
 __author__ = "730580489"
 
-def contains_char(secret: str,  guess_char: str) -> bool:
-    """"Searches to see if character mataches any index of the secret word."""
+def contains_char(secret: str, guess_char: str) -> bool:
+    """Searches to see if character mataches any index of the secret word."""
     assert len(guess_char) == 1
     index: int = 0
     misplaced: bool = False
@@ -14,7 +14,8 @@ def contains_char(secret: str,  guess_char: str) -> bool:
             index = index + 1
     if misplaced is False:
         return False
-    else: return True
+    else: 
+        return True
 def emojified(guess: str, secret: str) -> str:
     """Uses the contains_char function to determine the color emojis to return."""
     assert len(guess) == len(secret)
@@ -27,7 +28,7 @@ def emojified(guess: str, secret: str) -> str:
         if guess[index] == secret[index]:
             accuracy = accuracy + GREEN_BOX
             index = index + 1
-        elif contains_char(secret, guess[index]) == True:
+        elif contains_char(secret, guess[index]) is True:
             accuracy = accuracy + YELLOW_BOX
             index = index + 1
         else:
@@ -39,7 +40,8 @@ def input_guess(ex_len: int) -> str:
     guess: str = input(f"Enter a {ex_len} character word: ").lower()
     while len(guess) < ex_len or len(guess) > ex_len:
         guess = input(f"That wasn't {ex_len} chars! Try again: ").lower()
-    else: return guess
+    else: 
+        return guess
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     turn: int = 1
@@ -53,7 +55,8 @@ def main() -> None:
         if attempt == right:
             print(f"You won in {turn}/6 turns!")
             playing = False
-        else: turn = turn + 1
+        else: 
+            turn = turn + 1
     if turn > 6:
         print("X/6 - Sorry, try again tommorow!")
 if __name__ == "__main__":
