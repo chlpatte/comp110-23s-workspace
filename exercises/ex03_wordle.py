@@ -2,6 +2,7 @@
 
 __author__ = "730580489"
 
+
 def contains_char(secret: str, guess_char: str) -> bool:
     """Searches to see if character mataches any index of the secret word."""
     assert len(guess_char) == 1
@@ -16,6 +17,8 @@ def contains_char(secret: str, guess_char: str) -> bool:
         return False
     else: 
         return True
+
+
 def emojified(guess: str, secret: str) -> str:
     """Uses the contains_char function to determine the color emojis to return."""
     assert len(guess) == len(secret)
@@ -35,6 +38,8 @@ def emojified(guess: str, secret: str) -> str:
             accuracy = accuracy + WHITE_BOX
             index = index + 1
     return accuracy
+
+
 def input_guess(ex_len: int) -> str:
     """Ask user for a word that matches the designated length."""
     guess: str = input(f"Enter a {ex_len} character word: ").lower()
@@ -42,6 +47,8 @@ def input_guess(ex_len: int) -> str:
         guess = input(f"That wasn't {ex_len} chars! Try again: ").lower()
     else: 
         return guess
+
+
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     turn: int = 1
@@ -59,5 +66,7 @@ def main() -> None:
             turn = turn + 1
     if turn > 6:
         print("X/6 - Sorry, try again tommorow!")
+
+
 if __name__ == "__main__":
     main()
