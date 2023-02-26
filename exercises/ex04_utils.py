@@ -4,7 +4,7 @@ __author__ = "730580489"
 
 
 def all(array: list[int], num: int) -> bool:
-    """Function determines if the given int matches all int in the given list"""
+    """Function determines if the given int matches all int in the given list."""
     matching: bool = True
     idx: int = 0
     while idx < len(array) and matching is True:
@@ -12,14 +12,14 @@ def all(array: list[int], num: int) -> bool:
             idx = idx + 1
         else:
             matching = False
-    if matching == True:
+    if matching is True:
         return True
     else:
         return False
 
 
 def max(array: list[int]) -> int:
-    """Function finds the largest/max int within the list provided"""
+    """Function finds the largest/max int within the list provided."""
     if len(array) == 0:
         raise ValueError("max() arg is an empty List")
     idx: int = 0
@@ -34,7 +34,7 @@ def max(array: list[int]) -> int:
 
 
 def is_equal(array1: list[int], array2: list[int]) -> bool:
-    """Function determines if the list match eachother at every index"""
+    """Function determines if the list match eachother at every index."""
     if len(array1) != len(array2):
         return False
     idx: int = 0
@@ -44,8 +44,7 @@ def is_equal(array1: list[int], array2: list[int]) -> bool:
             idx = idx + 1
         else:
             matching = False
-    if matching == True:
+    if matching is True:
         return True
     else:
         return False
-
