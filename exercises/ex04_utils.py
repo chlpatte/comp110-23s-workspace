@@ -7,6 +7,8 @@ def all(array: list[int], num: int) -> bool:
     """Function determines if the given int matches all int in the given list."""
     matching: bool = True
     idx: int = 0
+    if len(array) == 0:
+        matching = False
     while idx < len(array) and matching is True:
         if num == array[idx]:
             idx = idx + 1
