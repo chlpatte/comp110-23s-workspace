@@ -2,7 +2,9 @@
 
 __author__ = "730580489"
 
+
 def only_evens(array: list[int]) -> list:
+    """Checks list for evens and puts them in a new list in the same order!"""
     idx: int = 0
     even_list: list[int] = list()
     for part in array:
@@ -15,6 +17,7 @@ def only_evens(array: list[int]) -> list:
 
 
 def concat(array1: list[int], array2: list[int]) -> list:
+    """Puts two list togeher!"""
     new_list = list()
     for part in range(0, len(array1)):
         new_list.append(array1[part])
@@ -24,6 +27,7 @@ def concat(array1: list[int], array2: list[int]) -> list:
 
 
 def sub(array: list[int], start: int, end: int) -> list:
+    """Uses inputed list to make a new list based on the range of the given start and end index!"""
     new_list = list()
     if len(array) == 0 or start >= len(array) or end <= 0:
         return new_list
@@ -34,4 +38,3 @@ def sub(array: list[int], start: int, end: int) -> list:
     for part in range(start, end):
         new_list.append(array[part])
     return new_list
-
