@@ -12,8 +12,9 @@ suits: list[str] = ["Spades", "Clubs", "Hearts", "Diamonds"]
 color: list[str] = ["black", "red"]
 
 def greet() -> None:
-    global player 
-    player = input("Welcome, What is your name? ")
+    global player
+    print("Welcome")
+    player = input("What is your name? ")
     print(f"{player} are you ready play the ultimate card guessing game? You will be guessing every aspect of a random card. The card's color, suit, number, or face. You will wage points based on how confident you are.")
     ready = input("Are you ready? Please answer with yes or no. ").lower()
     while ready != "yes" and ready != "no":
