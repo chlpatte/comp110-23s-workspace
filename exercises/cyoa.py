@@ -13,10 +13,9 @@ color: list[str] = ["black", "red"]
 
 def greet() -> None:
     global player
-    print("Welcome")
+    print("Welcome, are you ready play the ultimate card guessing game? You will be guessing every aspect of a random card. The card's color, suit, number, or face. You will wage points based on how confident you are.")
     player = input("What is your name? ")
-    print(f"{player} are you ready play the ultimate card guessing game? You will be guessing every aspect of a random card. The card's color, suit, number, or face. You will wage points based on how confident you are.")
-    ready = input("Are you ready? Please answer with yes or no. ").lower()
+    ready = input(f"{player} are you ready? Please answer with yes or no. ").lower()
     while ready != "yes" and ready != "no":
         ready = input(f"{player} that was not yes or no please try again. ").lower()
     if ready == "no":
