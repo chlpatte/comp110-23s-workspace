@@ -1,4 +1,4 @@
-"Test for the dictionary functions for ex07!"
+"""Test for the dictionary functions for ex07!"""
 
 __author__ = "730580489"
 
@@ -24,7 +24,7 @@ def test_length() -> None:
 
 
 def test_only_one_color() -> None:
-    """Makes sure the color is returned even if its the only color"""
+    """Makes sure the color is returned even if its the only color."""
     test_dict: dict[str, str] = {"k": "blue", "l": "blue", "m": "blue"}
     assert favorite_color(test_dict) == "blue"
 
