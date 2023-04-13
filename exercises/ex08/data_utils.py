@@ -40,10 +40,52 @@ def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
 def head(table: dict[str, list[str]], num: int) -> dict[str, list[str]]:
     """Makes a new table with only the num amount of data."""
     result: dict[str, list[str]] = {}
-    for key in table:
+    for key in table.keys():
+        if num >= len(table[key]):
+            result = table
+            return result
         collect: list[str] = []
-        for i in table:
-            collect.append(table(i))
-            result[key] = collect
+        idx: int = 0
+        catalog: list[int] = table[key]
+        while idx < num:
+            collect.append(catalog[idx])
+            idx += 1
+        result[key] = collect
     return result
 
+
+def select(table: dict[str, list[str]], columns: list[str]) -> dict[str, list[str]]:
+    """Produce a new column-based table with only a specific subset of the original columns."""
+    result: dict[str, list[str]] = {}
+    for i in columns:
+        chosen: list[str] = list()
+        if i in table:
+            catalog: list[str] = table[i]
+            for value in catalog:
+                chosen.append(value)
+        result[i] = chosen
+    return result
+
+
+def concat(table1: dict[str, list[str]], table2: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Combines two column-based tables to produce one column-based table."""
+    result: dict[str, list[str]] = {}
+    for i in table1:
+        result[i] = table1[i]
+    for i in table2:
+        if i in result:
+            result[i] += table2[i]
+        else:
+            result[i] = table2[i]
+    return result
+
+
+def count(inp_list: list[str]) -> dict[str, int]:
+    """Produce a dict where the value is the number of times a key appeared in a given list."""
+    result: dict[str, int] = {}
+    for i in inp_list:
+        if i in result:
+            result[i] += 1
+        else:
+            result[i] = 1
+    return result
