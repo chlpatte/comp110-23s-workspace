@@ -44,5 +44,6 @@ def head(table: dict[str, list[str]], num: int) -> dict[str, list[str]]:
         collect: list[str] = []
         for i in table:
             collect.append(table(i))
-        result[key] = collect
+            result[key] = collect
     return result
+
