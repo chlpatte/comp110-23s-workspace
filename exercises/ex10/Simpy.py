@@ -17,7 +17,7 @@ class Simpy:
         self.values = results
         return None
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         """Print class name and values."""
         return f"Simpy({self.values})"
     
@@ -114,7 +114,7 @@ class Simpy:
         return result
 
     def __getitem__(self, right_side: Union[int, list[bool]]) -> Union[float, Simpy]: 
-        """Allow one to utilize subscription operator."""
+        """Allow the use of subscription operators."""
         result: Simpy = Simpy([])
         if isinstance(right_side, int): 
             if right_side <= len(self.values): 
