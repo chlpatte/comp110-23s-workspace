@@ -21,15 +21,15 @@ class Simpy:
         """Print class name and values."""
         return f"Simpy({self.values})"
     
-    def fill(self, input: float, num: int):
-        """Filling Simpy with a set amount of a certain number."""
+    def fill(self, input: float, num: int) -> None:
+        """Fill Simpy with a set amount of a certain number."""
         result: list[float] = []
         for i in range(num):
             result.append(input)
         self.values = result
         return None
     
-    def arange(self, begin: float, end: float, step: float):
+    def arange(self, begin: float, end: float, step: float = 1.0) -> None:
         """Fill in the values attribute with a range of values."""
         assert step != 0.0, "Step size cannot be zero."
         result: list[float] = []
@@ -63,8 +63,8 @@ class Simpy:
                 result.values.append(self.values[i] + right_side)
         return result
     
-def __pow__(self, right_side: Union[float, Simpy]) -> Simpy: 
-        """Allows the use of multiplication of Simpy objects and floats."""
+    def __pow__(self, right_side: Union[float, Simpy]) -> Simpy: 
+        """Allow one to use ** in conjunction with Simpy objects and floats."""
         result: Simpy = Simpy([])
         if isinstance(right_side, float): 
             for i in range(len(self.values)): 
@@ -77,8 +77,8 @@ def __pow__(self, right_side: Union[float, Simpy]) -> Simpy:
                 i += 1
         return result
 
-def __eq__(self, right_side: Union[float, Simpy]) -> list[bool]: 
-        """Produces a mask based on equality of each item in values attribute with other values."""
+    def __eq__(self, right_side: Union[float, Simpy]) -> list[bool]: 
+        """Make a mask based on equality of each item in values attribute with other values."""
         result: list[bool] = []
         if isinstance(right_side, float): 
             for i in range(len(self.values)): 
@@ -95,9 +95,8 @@ def __eq__(self, right_side: Union[float, Simpy]) -> list[bool]:
                     result.append(False)
         return result
 
-
-def __gt__(self, right_side: Union[float, Simpy]) -> list[bool]: 
-        """Produces a mask based on greater than relationship between item in value attribute with other values."""
+    def __gt__(self, right_side: Union[float, Simpy]) -> list[bool]: 
+        """Make a mask based on greater than relationship between item in value attribute with other values."""
         result: list[bool] = []
         if isinstance(right_side, float): 
             for i in range(len(self.values)): 
@@ -114,7 +113,7 @@ def __gt__(self, right_side: Union[float, Simpy]) -> list[bool]:
                     result.append(False)
         return result
 
-def __getitem__(self, right_side: Union[int, list[bool]]) -> Union[float, Simpy]: 
+    def __getitem__(self, right_side: Union[int, list[bool]]) -> Union[float, Simpy]: 
         """Allow one to utilize subscription operator."""
         result: Simpy = Simpy([])
         if isinstance(right_side, int): 
