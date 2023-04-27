@@ -5,6 +5,8 @@ __author__ = "730580489"
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
 
+from fish import Fish
+from bear import Bear
 
 class River:
     """Class for the river that uses the fish and bear class."""
